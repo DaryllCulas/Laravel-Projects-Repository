@@ -1,0 +1,4 @@
+This project based on the Laravel Crash Course by learning with Jon
+
+Title: LARAVEL 11 Crash Course for Beginners 2024 | #1 Installation (Web Developer Path)
+Link: https://www.youtube.com/playlist?list=PL38wFHH4qYZXH8Gb7PIbmyjdsWdEJLImp
