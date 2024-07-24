@@ -10,7 +10,7 @@
 <body class="bg-slate-100 text-slate-900">
     <header class="bg-slate-800 shadow-lg">
         <nav>
-            <a href="#" class="nav-link">Home</a>
+            <a href="{{ route('home') }}" class="nav-link">Home</a>
                 <div class="flex items-center gap-4">
                     <a href="{{ route('home') }}" class="nav-link">Login</a>
                     <a href="{{ route('register') }}" class="nav-link">Register</a>
