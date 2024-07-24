@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    // Register
     public function register(Request $request)
     {
         // Validate
@@ -26,5 +27,24 @@ class AuthController extends Controller
 
         // Redirect
         return redirect()->route('home');
+    }
+
+    // login
+    public function login(Request $request)
+    {
+        // Validate
+        $validateFields = $request->validate([
+            'email' => ['required', 'email', 'max:255'],
+            'password' => ['required'],
+        ]);
+
+        // try to login user
+        if (Auth::attempt($validateFields, $request->remember)) {
+            return redirect()->intended();
+        } else {
+            return back()->withErrors([
+                'failed' => 'The provided credentials do not match our records.',
+            ]);
+        }
     }
 }
