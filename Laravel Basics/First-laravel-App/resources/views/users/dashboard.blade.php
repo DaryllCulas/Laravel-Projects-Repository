@@ -47,7 +47,19 @@
             <button class="primary-btn bg-blue-950">Create</button>
 
 
-
         </form>
+    </div>
+
+    {{-- User Posts --}}
+    <h2 class="font-bold mb-4">Your Latest Post</h2>
+
+    <div class="grid grid-cols-2 gap-6">
+        @foreach ($posts as $postItem)
+            <x-postCard :postItem="$postItem" />
+        @endforeach
+    </div>
+
+    <div>
+        {{ $posts->links() }}
     </div>
 </x-layout>
