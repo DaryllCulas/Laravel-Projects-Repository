@@ -19,9 +19,11 @@
         <div class="text-sm">
             <p>{{ Str::words($postItem->body, 15) }}</p>
         </div>
-
     </div>
-
     @endforeach
+</div>
+
+<div>
+    {{ $posts->links() }}
 </div>
 </x-layout>
