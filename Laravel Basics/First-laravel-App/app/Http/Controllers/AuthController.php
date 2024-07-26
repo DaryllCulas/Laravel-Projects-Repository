@@ -40,11 +40,30 @@ class AuthController extends Controller
 
         // try to login user
         if (Auth::attempt($validateFields, $request->remember)) {
-            return redirect()->intended();
+            return redirect()->intended('/dashboard');
         } else {
             return back()->withErrors([
                 'failed' => 'The provided credentials do not match our records.',
             ]);
         }
+    }
+
+
+    // logout user
+
+    public function logout(Request $request)
+    {
+
+        // logout the user
+        Auth::logout();
+
+        // invalidate user's session
+        $request->session()->invalidate();
+
+        // Regenrate CSRF token
+        $request->session()->regenerateToken();
+
+        // Redirect to home
+        return redirect('/');
     }
 }

@@ -30,13 +30,13 @@
         @apply font-semibold text-blue-500 hover:text-blue-600;
     }
     .nav-link {
-        @apply text-slate-200 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium;
+        @apply active:bg-slate-900 hover:bg-slate-100/10 text-slate-200 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium;
     }
     .title {
         @apply my-6 text-center text-3xl font-bold leading-9 text-slate-900;
     }
     .error {
-        @apply text-xs text-red-500 mt-1;
+        @apply text-xs text-red-500 mt-px;
     }
     table {
         @apply w-full text-sm text-left rounded-md shadow-lg overflow-hidden mb-6 table-auto bg-white;
@@ -59,4 +59,8 @@
     .round-btn {
         @apply w-8 h-8 overflow-auto rounded-full bg-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-slate-800;
     }
+    .username {
+        @apply py-2 pl-4 border-b border-slate-200 text-xs text-slate-700;
+    }
+
 }
