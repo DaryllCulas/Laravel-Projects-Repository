@@ -18,7 +18,7 @@ class PostController extends Controller
     {
 
         // $posts = Post::orderBy('created_at', 'DESC')->get();
-        $posts = Post::latest()->paginate(4);
+        $posts = Post::latest()->paginate(6);
 
 
 

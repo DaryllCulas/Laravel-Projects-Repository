@@ -23,6 +23,9 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
+Route::get('/{user}/posts', [DashboardController::class, 'userPosts'])->name('posts.user');
+
+
 // Another way to implement middleware by group
 
 

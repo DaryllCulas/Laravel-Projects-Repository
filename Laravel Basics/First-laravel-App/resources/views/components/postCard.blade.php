@@ -7,7 +7,7 @@
     {{-- Author and Date: USE CARBON() --}}
     <div class="text-xs font-light mb-4">
         <span>Posted {{ $postItem->created_at->diffForHumans() }} by</span>
-        <a href="" class="text-blue-500 font-medium">USERNAME</a>
+        <a href="{{ route('posts.user', $postItem->user) }}" class="text-blue-500 font-medium">{{ $postItem->user->username }}</a>
     </div>
 
     {{-- Body --}}
