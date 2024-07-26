@@ -8,7 +8,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-slate-100 text-slate-900">
+<body class="bg-slate-200 text-slate-900">
     <header class="bg-slate-800 shadow-lg">
         <nav>
             <a href="{{ route('posts.index') }}" class="nav-link">Home</a>

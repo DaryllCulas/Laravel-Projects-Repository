@@ -62,5 +62,8 @@
     .username {
         @apply py-2 pl-4 border-b border-slate-200 text-xs text-slate-700;
     }
+    .card {
+        @apply bg-white p-6 rounded-lg shadow-2xl border border-slate-200;
+    }
 
 }
