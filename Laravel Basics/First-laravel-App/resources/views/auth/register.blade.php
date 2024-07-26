@@ -8,7 +8,7 @@
                 <div class="mb-4">
                     <label for="username">Username</label>
                     <input type="text" name="username" value="{{ old('username') }}" class="input
-                    @error('username') ring- red-500 @enderror">
+                    @error('username') ring-red-500 @enderror">
                     @error('username')
                         <p class="error">{{ $message }}</p>
                     @enderror

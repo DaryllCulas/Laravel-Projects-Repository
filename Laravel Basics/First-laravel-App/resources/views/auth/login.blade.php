@@ -5,7 +5,7 @@
             <form action="{{ route('login') }}" method="post">
                 @csrf
                    {{-- Email --}}
-                   <div class="mb-4">
+                <div class="mb-4">
                     <label for="email">Email</label>
                     <input type="text" name="email" value="{{ old('email') }}" class="input
                     @error('email') ring-red-500 @enderror">
