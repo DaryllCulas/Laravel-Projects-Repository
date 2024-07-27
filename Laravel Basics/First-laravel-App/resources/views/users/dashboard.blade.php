@@ -3,7 +3,6 @@
     <p class="from-neutral-500 text-left mb-4">Number of Posts: {{ $posts->total() }}</p>
 
     {{-- Create Post Form --}}
-
     <div class="card mb-4">
         <h2 class="font-bold mb-4">Create a new post</h2>
 
@@ -17,7 +16,7 @@
 
 
 
-        <form action="{{ route('posts.store') }}" method="post">
+        <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             {{-- Post Title --}}
@@ -43,6 +42,17 @@
                 @enderror
 
             </div>
+
+            {{-- Post Image --}}
+            <div class="mb-4">
+                <label for="image">Cover Photo</label>
+                <input type="file" name="image" id="image">
+
+                @error('image')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+            </div>
+
             {{-- Submit Button --}}
             <button class="primary-btn bg-blue-950">Create</button>
 

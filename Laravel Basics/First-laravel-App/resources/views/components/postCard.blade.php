@@ -1,6 +1,19 @@
 @props(['postItem', 'full' => false])
 
 <div class="card">
+
+    {{-- Cover Photo --}}
+    <div>
+        @if ($postItem->image)
+            <img src="{{ asset('storage/' . $postItem->image) }}">
+        @else
+            <img src="{{ asset('storage/posts_images/iWyehxmM0QBO59KBn1QO0DG1MCNN2aqBof1BVp5b.png') }}">
+        @endif
+
+
+
+    </div>
+
     {{-- Title --}}
     <h2 class="font-bold text-xl"> {{ $postItem->title }}</h2>
 
