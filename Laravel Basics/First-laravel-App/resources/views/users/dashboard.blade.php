@@ -11,7 +11,7 @@
             {{-- Session Message --}}
             @if (session('success'))
                 <x-flashMsg msg="{{ session('success') }}" />
-            @else
+            @elseif (session('delete'))
                 <x-flashMsg msg="{{ session('delete') }}" bg="bg-red-500"/>
             @endif
 
@@ -57,7 +57,11 @@
         @foreach ($posts as $postItem)
             <x-postCard :postItem="$postItem">
 
-                  {{-- Delete --}}
+                {{-- Update --}}
+                <a href="{{ route('posts.edit', $postItem) }}" class="bg-blue-500 text-white px-2 py-1 text-xs rounded-md">Update</a>
+
+
+                {{-- Delete --}}
                 <form action="{{ route('posts.destroy', $postItem) }}" method="post">
                     @csrf
                     @method('DELETE')
