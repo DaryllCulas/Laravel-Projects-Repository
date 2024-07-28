@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 // use App\Http\Requests\UpdatePostRequest;
 
 
+use App\Events\UserSubscribed;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
