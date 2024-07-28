@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 // use App\Http\Requests\StorePostRequest;
 // use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -49,10 +50,8 @@ class PostController extends Controller implements HasMiddleware
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
-
-
         // Validate
         $request->validate([
             'title' => ['required', 'max:255'],
@@ -69,6 +68,7 @@ class PostController extends Controller implements HasMiddleware
         }
 
         // Create a post
+
         Auth::user()->posts()->create([
             'title' => $request->title,
             'body' => $request->body,
@@ -107,13 +107,28 @@ class PostController extends Controller implements HasMiddleware
         Gate::authorize('modify', $post);
 
         // Validate
-        $postFields = $request->validate([
+        $request->validate([
             'title' => ['required', 'max:255'],
-            'body' => ['required']
+            'body' => ['required'],
+            'image' => ['nullable', 'file', 'max:3000', 'mimes:webp,jpg,jpeg,png'],
         ]);
 
+
+        // Store image if exists
+        $path = $post->image ?? null;
+        if ($request->hasFile('image')) {
+            if ($post->image) {
+                Storage::disk('public')->delete($post->image);
+            }
+            $path = Storage::disk('public')->put('posts_images', $request->image);
+        }
+
         // Update a post
-        $post->update($postFields);
+        $post->update([
+            'title' => $request->title,
+            'body' => $request->body,
+            'image' => $path
+        ]);
 
         // Redirect to dashboard
 
@@ -127,6 +142,12 @@ class PostController extends Controller implements HasMiddleware
     {
         // Only Authorized users can delete posts
         Gate::authorize('modify', $post);
+
+        // Delete post image if exists
+        if ($post->image) {
+            Storage::disk('public')->delete($post->image);
+        }
+
 
         // Delete the post
         $post->delete();
