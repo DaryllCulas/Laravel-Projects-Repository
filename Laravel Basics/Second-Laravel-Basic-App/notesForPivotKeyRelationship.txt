@@ -1,0 +1,28 @@
+
+
+         * Notes: in SQLite Database: make sure the 'job_listings_table' should have 'PRAGMA foreign_keys = ON;' in SQL query for the 'belongsToMany'
+         in order to enable the 'foreignPivotKey'
+
+
+        * and just play around in tinker console to determine the associativity between the 'job_listings_table' and 'tag_table'
+
+
+         <<< Tinker console: >>>
+
+          $Job = App\Models\Job::find(1);
+          $Job->tags;
+
+
+          $Tag = App\Models\Tag::find(1);
+          $Tag->jobs;
+
+          // Inserting related data in job_tag table
+          $Tag->jobs()->attach(App\Models\Job::find(7));
+
+
+          // re-fetch all data in case of not fetching related data
+
+          $Tag = App\Models\Tag::find(1);
+          $Tag->jobs;
+          $Tag->jobs()->get();
+
