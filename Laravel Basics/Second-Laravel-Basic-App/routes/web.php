@@ -13,10 +13,8 @@ Route::get('/', function () {
 
 Route::get('/jobs', function () {
 
-    // eager loading here to avoid N+1 queries
-    $jobs = Job::with('employer')->get();
-
-
+    // eager loading here to avoid N+1 queries and apply pagination
+    $jobs = Job::with('employer')->cursorPaginate(4);
 
     return view('jobs', ['jobs' => $jobs]);
 });
