@@ -12,7 +12,13 @@ Route::get('/', function () {
 
 
 Route::get('/jobs', function () {
-    return view('jobs', ['jobs' => Job::all()]);
+
+    // eager loading here to avoid N+1 queries
+    $jobs = Job::with('employer')->get();
+
+
+
+    return view('jobs', ['jobs' => $jobs]);
 });
 
 Route::get('/jobs/{id}', function ($id) {
