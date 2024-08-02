@@ -3,7 +3,9 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Mail\JobPosted;
 use App\Models\Job;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,6 +14,9 @@ Route::view('/', 'home');
 
 // It serves as contact page
 Route::view('/contact', 'contact');
+
+
+
 
 
 Route::get('/jobs', [JobController::class, 'index']);
