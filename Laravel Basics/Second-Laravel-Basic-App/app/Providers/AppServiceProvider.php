@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Job;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,7 +26,5 @@ class AppServiceProvider extends ServiceProvider
     {
         // prevent lazy loading
         Model::preventLazyLoading();
-
-        // Paginator::useBootstrapFive();
     }
 }
