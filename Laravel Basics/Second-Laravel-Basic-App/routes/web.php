@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
 use App\Mail\JobPosted;
 use App\Models\Job;
 use Illuminate\Support\Facades\Mail;
@@ -15,8 +16,18 @@ Route::view('/', 'home');
 // It serves as contact page
 Route::view('/contact', 'contact');
 
+// Queueing for Job
+Route::get('test', function () {
+    // dispatch(function () {
+    //     logger('hello from the queue');
+    // })->delay(5);
 
+    $job = Job::first();
 
+    TranslateJob::dispatch($job);
+
+    return 'Done';
+});
 
 
 Route::get('/jobs', [JobController::class, 'index']);
