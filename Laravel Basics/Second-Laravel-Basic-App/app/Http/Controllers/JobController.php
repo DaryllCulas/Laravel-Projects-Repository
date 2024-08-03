@@ -15,7 +15,7 @@ class JobController extends Controller
     public function index()
     {
         // eager loading here to avoid N+1 queries and apply pagination
-        $jobs = Job::with('employer')->latest()->cursorPaginate(4);
+        $jobs = Job::with('employer')->latest()->Paginate(4);
 
         return view('jobs.index', ['jobs' => $jobs]);
     }
