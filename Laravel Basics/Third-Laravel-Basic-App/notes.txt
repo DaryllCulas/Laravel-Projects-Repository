@@ -1,0 +1,4 @@
+This project based on the Laravel Crash Course by Laracasts (Jeffrey Way)
+
+Title: LARAVEL 11 Crash Course for Beginners 2024
+Link: https://www.youtube.com/watch?v=1NjOWtQ7S2o&list=PL3VM-unCzF8hy47mt9-chowaHNjfkuEVz&pp=iAQB
