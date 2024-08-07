@@ -47,14 +47,22 @@ class JobController extends Controller
             'tags' => ['nullable'],
         ]);
 
-        $attributes['featured'] = $request->has('featured');
+        $employer = $request->user()->employer;
 
-        $job = Auth::user()->employer->jobs()->create(Arr::except($attributes, 'tags'));
+        if ($employer) {
+            $attributes['featured'] = $request->has('featured');
 
-        if ($attributes['tags'] ?? false) {
-            foreach (explode(',', $attributes['tags']) as $tag) {
-                $job->tag($tag);
+            $job = $employer->jobs()->create(Arr::except($attributes, 'tags'));
+
+            if ($attributes['tags'] ?? false) {
+                foreach (explode(',', $attributes['tags']) as $tag) {
+                    $job->tag($tag);
+                }
             }
+        } else {
+            // Handle the case where the employer is null
+            // For example, you could redirect back with an error message
+            return redirect()->back()->withErrors(['employer' => 'You must have an employer to create a job']);
         }
 
         return redirect('/');
