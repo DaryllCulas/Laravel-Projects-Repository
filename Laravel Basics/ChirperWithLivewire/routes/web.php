@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('chirps', [ChirpController::class])
+Route::get('chirps', [ChirpController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('chirps');
 
