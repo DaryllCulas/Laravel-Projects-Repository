@@ -9,7 +9,7 @@ new class extends Component {
 
     public Chirp $chirp;
 
-    #[Validate('require|string|max:255')]
+    #[Validate('required|string|max:255')]
     public string $message = '';
 
     public function mount(): void
