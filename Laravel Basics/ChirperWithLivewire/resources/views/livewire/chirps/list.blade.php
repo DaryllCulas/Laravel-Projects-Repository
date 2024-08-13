@@ -29,6 +29,14 @@ new class extends Component {
         $this->getChirps();
     }
 
+    #[On('chirp-edit-canceled')]
+    #[On('chirp-updated')]
+    public function disableEditing(): void
+    {
+        $this->editing = null;
+        $this->getChirps();
+    }
+
 }; ?>
 
 <div class="mt-6 bg-white shadow sm:rounded-lg divide-y">
