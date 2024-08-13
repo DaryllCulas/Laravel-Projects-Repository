@@ -1,8 +1,10 @@
 <?php
 
+use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 
-new class extends Component {
+new class extends Component
+ {
 
     #[Validate('required|string|max:255')]
 
