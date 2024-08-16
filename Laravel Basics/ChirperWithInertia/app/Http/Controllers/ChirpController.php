@@ -31,6 +31,7 @@ class ChirpController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
