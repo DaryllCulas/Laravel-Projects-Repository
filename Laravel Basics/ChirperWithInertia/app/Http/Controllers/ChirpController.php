@@ -31,16 +31,17 @@ class ChirpController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-
         $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
 
-        $request->user()->chirps()->create($validated);
+        $chirp = new Chirp();
+        $chirp->message = $validated['message'];
+        $chirp->user_id = $request->user()->id;
+        $chirp->save();
 
         return redirect(route('chirps.index'));
     }
-
     /**
      * Display the specified resource.
      */
