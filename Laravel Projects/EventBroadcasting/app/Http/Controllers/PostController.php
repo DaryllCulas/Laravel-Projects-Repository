@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        $post = Post::get();
+        $posts = Post::get();
 
         return view('posts', compact('posts'));
     }

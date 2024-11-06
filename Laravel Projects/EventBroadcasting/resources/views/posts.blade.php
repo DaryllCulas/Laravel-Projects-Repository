@@ -36,7 +36,7 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group mt-2">
+                        <div class="mt-2 form-group">
                             <button type="submit" class="btn btn-success btn-block"><i class="fa fa-save"></i>
                                 Submit</button>
                         </div>

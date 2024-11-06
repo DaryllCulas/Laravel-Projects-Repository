@@ -20,11 +20,15 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::post('posts', [PostController::class, 'store'])->name('posts.store');
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 
 
 require __DIR__ . '/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
