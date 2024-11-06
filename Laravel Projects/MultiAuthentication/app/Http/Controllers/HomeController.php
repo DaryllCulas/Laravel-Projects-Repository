@@ -29,11 +29,11 @@ class HomeController extends Controller
 
     public function adminHome(): View
     {
-        return view('adminHome');
+        return view('Admin.adminHome');
     }
 
     public function managerHome(): View
     {
-        return view('managerHome');
+        return view('Manager.managerHome');
     }
 }
