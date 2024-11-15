@@ -29,7 +29,7 @@ class PostCreate implements ShouldBroadcastNow
      *
      * @return array<int, \Illuminate\Broadcasting\Channel>
      */
-    public function broadcastOn()
+    public function broadcastOn(): Channel
     {
         return new Channel('posts');
     }
