@@ -12,7 +12,9 @@ class PostController extends Controller
     {
         $posts = Post::get();
 
-        return view('posts', ['posts' => $posts]);
+
+
+        return view('posts', compact('posts'));
     }
 
     public function store(Request $request)

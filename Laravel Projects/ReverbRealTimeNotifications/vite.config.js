@@ -9,6 +9,10 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
+            hmr: true, // Enable Hot Module Replacement (HMR)
+            hmrOptions: {
+                host: 'localhost', // Set the host to enable HMR across multiple browser windows
+            },
         }),
     ],
 });
