@@ -75,7 +75,7 @@ class UserController extends Controller
             }
         }
 
-        return view('users-edit', [
+        return view('users.edit', [
             'user' => $user,
             'roles' => Role::pluck('name')->all(),
             'userRoles' => $user->roles->pluck('name')->all()

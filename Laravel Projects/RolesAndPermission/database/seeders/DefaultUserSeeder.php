@@ -28,7 +28,7 @@ class DefaultUserSeeder extends Seeder
             'password' => Hash::make('password')
         ]);
 
-        $admin->assigneRole('Admin');
+        $admin->assignRole('Admin');
 
         $productManager = User::create([
             'name' => 'productmanager',
@@ -36,7 +36,7 @@ class DefaultUserSeeder extends Seeder
             'password' => Hash::make('password')
         ]);
 
-        $productManager->assigneRole('Product Manager');
+        $productManager->assignRole('Product Manager');
 
         $user = User::create([
             'name' => 'user',
