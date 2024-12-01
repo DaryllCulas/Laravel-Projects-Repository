@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel 11 Spatie User Roles and Permissions</title>
+    <title>Laravel 11 Spatie User Roles and Permissions - AllPHPTricks.com</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -23,7 +23,7 @@
         <nav class="bg-white shadow-sm navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    Roles and Permissions
+                    AllPHPTricks.com
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -100,8 +100,22 @@
                         @endif
 
                         <h3 class="mt-3 mb-3 text-center">Laravel 11 Spatie User Roles and Permissions - <a
-                                href="{{ route('home') }}">Roles and Permission</a></h3>
+                                href="https://www.allphptricks.com/">AllPHPTricks.com</a></h3>
                         @yield('content')
+
+                        <div class="mt-3 text-center row justify-content-center">
+                            <div class="col-md-12">
+                                <p>Back to Tutorial:
+                                    <a
+                                        href="https://www.allphptricks.com/laravel-11-spatie-user-roles-and-permissions/"><strong>Tutorial
+                                            Link</strong></a>
+                                </p>
+                                <p>
+                                    For More Web Development Tutorials Visit: <a
+                                        href="https://www.allphptricks.com/"><strong>AllPHPTricks.com</strong></a>
+                                </p>
+                            </div>
+                        </div>
 
 
                     </div>

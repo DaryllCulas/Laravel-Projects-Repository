@@ -15,12 +15,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
+
 Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
-    'products' => ProductController::class
+    'products' => ProductController::class,
 ]);
-
 
 
 Route::middleware('auth')->group(function () {

@@ -39,11 +39,11 @@ class LoginController extends Controller
         $this->middleware('auth')->only('logout');
     }
 
-    protected function Logout(Request $request)
+    protected function logout(Request $request)
     {
         $this->guard()->logout();
         $request->session()->flush();
         $request->session()->regenerate();
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }
