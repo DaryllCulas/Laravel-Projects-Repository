@@ -16,6 +16,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::get('/payments', [PaymentController::class, 'index']);
 Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments.destroy');
+Route::put('/payments/${id}', [PaymentController::class, 'update'])->name('payments.update');
 
 
 require __DIR__.'/settings.php';

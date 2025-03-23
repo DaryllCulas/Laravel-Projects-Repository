@@ -1,15 +1,8 @@
 'use client';
-
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { router } from '@inertiajs/react';
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 
@@ -22,7 +15,17 @@ export type Payment = {
     email: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+const handleDelete = (id: string) => {
+    router.delete(`/payments/${id}`, {
+        preserveScroll: true,
+    });
+};
+
+export const columns = (
+    setIsModalOpen: (open: boolean) => void,
+    setEditModalOpen: (open: boolean) => void,
+    setSelectedPayment: (payment: Payment | null) => void,
+): ColumnDef<Payment>[] => [
     {
         id: 'select',
         header: ({ table }) => (
@@ -80,10 +83,15 @@ export const columns: ColumnDef<Payment>[] = [
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                        <DropdownMenuItem onClick={() => navigator.clipboard.writeText(payment.id)}>Copy payment ID</DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>View customer</DropdownMenuItem>
-                        <DropdownMenuItem>View payment details</DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => handleDelete(payment.id)}>Delete</DropdownMenuItem>
+                        <DropdownMenuItem
+                            onClick={() => {
+                                setSelectedPayment(payment);
+                                setEditModalOpen(true);
+                            }}
+                        >
+                            Update
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             );
