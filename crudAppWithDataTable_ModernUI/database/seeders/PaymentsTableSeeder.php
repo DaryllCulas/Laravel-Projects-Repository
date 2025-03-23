@@ -1,0 +1,313 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class PaymentsTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('payments')->insert([
+            [
+                'email' => 'user1@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user2@example.com',
+                'amount' => 200.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user3@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user4@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user5@example.com',
+                'amount' => 300.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user6@example.com',
+                'amount' => 350.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user7@example.com',
+                'amount' => 400.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user8@example.com',
+                'amount' => 450.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user9@example.com',
+                'amount' => 500.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user10@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user11@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user12@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user13@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user14@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user15@example.com',
+                'amount' => 250.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user16@example.com',
+                'amount' => 300.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user17@example.com',
+                'amount' => 350.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user18@example.com',
+                'amount' => 400.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user19@example.com',
+                'amount' => 450.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user20@example.com',
+                'amount' => 500.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user21@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user22@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user23@example.com',
+                'amount' => 200.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user24@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user25@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user26@example.com',
+                'amount' => 300.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user27@example.com',
+                'amount' => 350.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user28@example.com',
+                'amount' => 400.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user29@example.com',
+                'amount' => 450.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user30@example.com',
+                'amount' => 500.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user31@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user32@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user33@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user34@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user35@example.com',
+                'amount' => 100.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user36@example.com',
+                'amount' => 250.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user37@example.com',
+                'amount' => 300.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user38@example.com',
+                'amount' => 350.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user39@example.com',
+                'amount' => 400.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user40@example.com',
+                'amount' => 450.00,
+                'status' => 'pending',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user41@example.com',
+                'amount' => 500.00,
+                'status' => 'failed',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'email' => 'user42@example.com',
+                'amount' => 550.00,
+                'status' => 'success',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+    }
+}
