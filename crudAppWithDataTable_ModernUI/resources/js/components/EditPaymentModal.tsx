@@ -65,6 +65,7 @@ const handleSubmit = async(event: React.FormEvent) => {
         setTimeout(() => {
             onClose();
             window.location.reload();
+
         }, 1500);
        } else {
         const errorData = await response.json();
@@ -99,8 +100,8 @@ return(
                 required
                 />
                 <Input type="number"
-                    name="email"
-                    value={formData.email}
+                    name="amount"
+                    value={formData.amount}
                     onChange={handleChange}
                     placeholder="Enter amount"
                     required

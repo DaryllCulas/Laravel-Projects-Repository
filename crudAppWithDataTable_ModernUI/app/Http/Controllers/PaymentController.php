@@ -41,6 +41,6 @@ class PaymentController extends Controller
             'status' => $request->status
         ]);
 
-        return redirect()->json(['message'=> 'Payment Updated Successfully'], 200);
+        return response()->json(['message'=> 'Payment Updated Successfully'], 200);
     }
 }
