@@ -106,10 +106,10 @@ return(
                     placeholder="Enter amount"
                     required
                 />
-                <select name="status" value={formData.status} onChange={handleChange} className="border p-2 rounded w-full" required>
-                    <option value="pending">Pending</option>
-                    <option value="processing">Processing</option>
-                    <option value="success">Success</option>
+                <select name="status" value={formData.status} onChange={handleChange} className="border p-2 rounded w-full dark:text-white" required>
+                    <option value="pending" className="dark:text-black">Pending</option>
+                    <option value="processing" className="dark:text-black">Processing</option>
+                    <option value="success" className="dark:text-black">Success</option>
                 </select>
                 <Button variant="outline" type="button" onClick={onClose} disabled={loading}>Cancel</Button>
                 <Button type="submit" disabled={loading}>

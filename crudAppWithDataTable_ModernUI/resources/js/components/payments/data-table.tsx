@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import  AddPaymentModal  from '@/components/AddPaymentModal';
 import {
     ColumnDef,
     ColumnFiltersState,
@@ -17,6 +18,7 @@ import {
 } from '@tanstack/react-table';
 import * as React from 'react';
 
+
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
     data: TData[];
@@ -27,6 +29,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
     const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
     const [rowSelection, setRowSelection] = React.useState({});
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
 
     const table = useReactTable({
         data,
@@ -60,6 +63,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                     onChange={(event) => table.getColumn('email')?.setFilterValue(event.target.value)}
                     className="max-w-sm"
                 />
+                <Button variant="outline" className='ml-2' onClick={() => setIsModalOpen(true)}>Add</Button>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline" className="mr-2 ml-auto">
@@ -127,6 +131,7 @@ export function DataTable<TData, TValue>({ columns, data }: DataTableProps<TData
                 <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
                     Next
                 </Button>
+                <AddPaymentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
         </div>
     );

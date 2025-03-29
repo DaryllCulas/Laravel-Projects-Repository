@@ -5,7 +5,7 @@ import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
-
+import  AddPaymentModal  from '@/components/AddPaymentModal';
 
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -19,6 +19,7 @@ export default function DemoPage({ payments }: { payments: Payment[] }) {
     const [data, setData] = useState<Payment[]>([payments]);
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [ selectedPayment, setSelectedPayment] = useState<Payment | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         setData(payments);
@@ -45,6 +46,7 @@ export default function DemoPage({ payments }: { payments: Payment[] }) {
             </div>
 
             <EditPaymentModal isOpen={editModalOpen} onClose={() => setEditModalOpen(false) } payment={selectedPayment} onUpdate={handleUpdate}/>
-        </AppLayout>
+            <AddPaymentModal isOpen={isModalOpen} onClose={() => setEditModalOpen(false) }/>
+                    </AppLayout>
     );
 }

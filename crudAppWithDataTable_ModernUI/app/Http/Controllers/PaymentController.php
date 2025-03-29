@@ -43,4 +43,21 @@ class PaymentController extends Controller
 
         return response()->json(['message'=> 'Payment Updated Successfully'], 200);
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|unique:payments,email',
+            'amount' => 'required|numeric|min:0',
+            'status' => 'required|in:pending,success,failed, processing'
+        ]);
+
+        Payment::create([
+            'email' => $request->email,
+            'amount' => $request->amount,
+            'status' => $request->status
+        ]);
+        return response()->json(['message' => 'Payment Created Successfully'], 200);
+
+    }
 }
