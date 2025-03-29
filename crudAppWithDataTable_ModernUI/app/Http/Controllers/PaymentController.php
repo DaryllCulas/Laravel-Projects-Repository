@@ -12,7 +12,7 @@ class PaymentController extends Controller
     public function index(): Response
     {
         return Inertia::render('Payments', [
-            'payments' => Payment::all()
+            'payments' => Payment::orderBy('created_at', 'desc')->get(),
         ]);
     }
 
